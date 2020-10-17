@@ -1,0 +1,14 @@
+services:
+  mail-cli:
+    container_name: mail_cli
+    image: mail-cli:0.0.1
+    volumes:
+      - ./config:/config
+      - ./mail:/mail
+      - $HOME/Downloads:/data
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Europe/Paris
+    tty: true
+
